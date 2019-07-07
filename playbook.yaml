@@ -1,0 +1,12 @@
+- name: Update and Install packages
+  hosts: wsl
+  become: true
+  tasks:
+    - name: update package list
+      package:
+        update_cache: yes
+
+    - name: upgrade all packages
+      package:
+        name: "*"
+        state: latest

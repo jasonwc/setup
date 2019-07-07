@@ -6,4 +6,4 @@ Setting up Ubuntu on WSL2 with ansible
 ```
 sudo sh bootstrap.sh
 ansible-playbook -K playbook.yaml
-``
+```

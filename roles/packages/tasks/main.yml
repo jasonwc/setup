@@ -1,0 +1,10 @@
+- name: update package list
+  become: true
+  package:
+    update_cache: yes
+
+- name: upgrade all packages
+  become: true
+  package:
+    name: "*"
+    state: latest

@@ -1,38 +1,4 @@
-- name: Update and Install packages
-  hosts: wsl
-  become: true
-  tasks:
-    - name: update package list
-      package:
-        update_cache: yes
-
-    - name: upgrade all packages
-      package:
-        name: "*"
-        state: latest
-# Docker
-# Kubectl
-# Helm
-# k14s
-# terraform
-# ruby
-# node
-# elixir
-# asdf
-# rvm
-# kubeps1
-# kubectx
-# kubens
-# terragrunt
-# vim
-# fonts
-# zsh?
-# shell mods
-# directory management
-# skaffold
-# possibly split applications out from utils/ e.g. cli mode vs full mode
-# tmux
-# vim wiki
-# vim plugins
-# doctl
-# spacemacs?
+- hosts: wsl
+  roles:
+    - packages
+  user: jason

@@ -8,3 +8,13 @@
   package:
     name: "*"
     state: latest
+
+- name: Install packages
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - vim
+    - git
+    - curl
+    - tmux

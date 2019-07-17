@@ -1,4 +1,8 @@
 - hosts: wsl
+  vars_files:
+    - vars/workspace_repos.yml  
   roles:
     - packages
+    - shell
+    - workspace
   user: jason

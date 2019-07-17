@@ -1,0 +1,8 @@
+# - name: Install dotfiles  
+#   git:     
+#     repo: 'git@github.com:jasonwc/dotfiles.git'     
+#     dest: '{{ lookup("env", "HOME") }}/dotfiles'     
+#     accept_hostkey: yes     
+#     key_file: '{{ lookup("env", "HOME") }}/.ssh/id_rsa'
+#   become: true
+#   become_user: 'jason'

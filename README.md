@@ -35,3 +35,7 @@ ansible-playbook -K playbook.yaml
 - [ ] vim plugins
 - [ ] doctl
 - [ ] spacemacs?
+
+## Resources
+[Got me started](https://www.tricksofthetrades.net/2017/10/02/ansible-local-playbooks/)
+[dev-machine](https://github.com/SteveEdson/dev-machine)

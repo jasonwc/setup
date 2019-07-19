@@ -8,4 +8,5 @@
     - shell
     - workspace
     - ops
+    - dev
   user: jason

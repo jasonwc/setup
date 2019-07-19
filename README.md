@@ -13,7 +13,9 @@ ansible-playbook -K playbook.yaml
 
 ## What do you get?
 
-### Infrastructure/OPS tooling
+### Ops tooling
+
+> Tooling for doing operations and infrastructure type tasks. Mostly focused on interacting with cloud providers and working with Kubernetes and Docker.
 
 - [Docker](https://www.docker.com/): building and running containers
 - [Kubectl](https://kubernetes.io/): interacting with Kubernetes clusters
@@ -23,21 +25,26 @@ ansible-playbook -K playbook.yaml
 - [k14s](https://k14s.io/): using ytt (yaml templating), kbld (image building and pushing), kapp (kubernetes application), kwt (workstation tooling)
 - [kubectx and kubens](https://kubectx.dev): tools for quickly changing kubernetes contexts and namespaces
 - [Skaffold](https://github.com/GoogleContainerTools/skaffold): CLI tool for iterating on Kubernetes applications
+
+### Dev tooling
+
+> Tooling and programming languages for scripting and application development.
+
+- [asdf](https://asdf-vm.com/#/): version manager for multiple languages, frameworks, and plugings (think nvm, rbenv)
+- [ruby](https://www.ruby-lang.org/en/): "A dynamic, open source programming language with a focus on simplicity and productivity."
+- [erlang](https://www.erlang.org/): "Erlang is a programming language used to build massively scalable soft real-time systems with requirements on high availability."
+- [elixir](https://elixir-lang.org/): "Elixir is a dynamic, functional language designed for building scalable and maintainable applications."
+
 ## To Do:
 
-- [ ] ruby
 - [ ] node
-- [ ] elixir
-- [ ] asdf
-- [ ] rvm
 - [ ] kubeps1
 - [ ] terragrunt
 - [ ] vim
 - [ ] fonts
 - [ ] zsh?
 - [ ] directory management
-- [ ] skaffold
-- [ ] possibly split applications out from utils/ e.g. cli mode vs full mode
+- [ ] possibly add gui applications for a native linux install? e.g. cli mode vs full mode
 - [ ] tmux
 - [ ] vim wiki
 - [ ] vim plugins

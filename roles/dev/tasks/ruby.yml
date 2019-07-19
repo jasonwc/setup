@@ -1,0 +1,6 @@
+---
+- name: Install Ruby
+  shell: "asdf install ruby 2.6.3"
+
+- name: Set global Ruby
+  shell: "asdf global ruby 2.6.3"

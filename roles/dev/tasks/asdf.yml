@@ -1,0 +1,25 @@
+---
+- name: Clone asdf
+  command: git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.2
+  args:
+    creates: ~/.asdf
+
+- name: Add asdf to shell
+  lineinfile:
+    insertafter: EOF
+    state: present
+    dest: "{{ lookup('env', 'HOME') }}/.bashrc"
+    line: "source {{ lookup('env', 'HOME') }}/.asdf/asdf.sh"
+
+- name: Get installed asdf plugins
+  command: "asdf plugin-list"
+  register: asdf_plugins
+  ignore_errors: yes
+
+- name: Add asdf plugins
+  command: "asdf plugin-add {{ item }}"
+  when: "item|string not in asdf_plugins.stdout_lines"
+  with_items:
+    - erlang
+    - elixir
+    - ruby

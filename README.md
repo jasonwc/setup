@@ -1,8 +1,10 @@
 # Setup
 Ansible Playbooks for setting up an ops/ruby/elixir/node focused workstation.
 
-Currently using this on [WSL2](https://devblogs.microsoft.com/commandline/announcing-wsl-2/) and in VMs managed by [multipass](https://github.com/CanonicalLtd/multipass)
+Used on:
+- [WSL2](https://devblogs.microsoft.com/commandline/announcing-wsl-2/) with the [Ubuntu app ](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab)
 
+For information on how to enable WSL2, check out this handy [post](https://www.thomasmaurer.ch/2019/06/install-wsl-2-on-windows-10/?source=post_page---------------------------)
 ## Quick Start
 
 ```

@@ -1,0 +1,7 @@
+- name: install kwt binary
+  become: true
+  get_url:
+    url: https://github.com/k14s/kwt/releases/download/v0.0.5/kwt-linux-amd64
+    mode: 0755
+    dest: /usr/local/bin/kwt
+    checksum: "sha256:706abe487e38c4f673180600d11098e408e6bc22fefb1cc512e3ac0f07a9072c"

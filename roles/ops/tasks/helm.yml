@@ -1,0 +1,17 @@
+- name: download helm tarball
+  get_url:
+    url: "https://storage.googleapis.com/kubernetes-helm/helm-v{{ helm_version }}-linux-amd64.tar.gz"
+    dest: /var/tmp/helm-{{ helm_version }}.tar.gz
+    checksum: "sha256:{{ helm_shasum }}"
+
+- name: untar helm
+  unarchive:
+    src: "/var/tmp/helm-{{ helm_version }}.tar.gz"
+    dest: "/var/tmp/"
+
+- name: add helm binary to path
+  become: true
+  copy:
+    src: /var/tmp/linux-amd64/helm
+    dest: /usr/local/bin/helm
+    mode: 0755

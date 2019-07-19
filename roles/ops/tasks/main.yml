@@ -3,3 +3,4 @@
 - include_tasks: helm.yml
 - include_tasks: terraform.yml
 - include_tasks: k14s.yml
+- include_tasks: kubectx.yml

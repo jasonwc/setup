@@ -1,0 +1,19 @@
+- name: Clone kubectx and kubens
+  become: true
+  git:
+    repo: 'https://github.com/ahmetb/kubectx'
+    dest: '/var/tmp/kubectx'
+
+- name: Create a symbolic link
+  become: true
+  file:
+    src: /var/tmp/kubectx/kubectx
+    dest: /usr/local/bin/kubectx
+    state: link
+
+- name: Create a symbolic link
+  become: true
+  file:
+    src: /var/tmp/kubectx/kubens
+    dest: /usr/local/bin/kubens
+    state: link

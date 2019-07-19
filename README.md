@@ -8,6 +8,9 @@ For information on how to enable WSL2, check out this handy [post](https://www.t
 ## Quick Start
 
 ```
+# Clone to your home directory
+git clone git@github.com:jasonwc/setup.git
+
 # Installs ansible and dependencies
 sudo sh bootstrap.sh
 
@@ -54,6 +57,16 @@ ansible-playbook -K playbook.yaml
 - [ ] vim plugins
 - [ ] doctl
 - [ ] spacemacs?
+
+## Troubleshooting
+
+>  [WARNING] Ansible is in a world writable directory
+
+If you see something like this, you need to set correct permissions on the `setup` directory:
+
+```
+ chmod 700 /path/to/setup directory
+```
 
 ## Resources
 - [Quickstart on how to create local ansible playbooks](https://www.tricksofthetrades.net/2017/10/02/ansible-local-playbooks/)

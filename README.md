@@ -1,5 +1,7 @@
 # Setup
-Setting up Ubuntu on WSL2 with ansible
+Ansible Playbooks for setting up an ops/ruby/elixir/node focused workstation.
+
+Currently using this on [WSL2](https://devblogs.microsoft.com/commandline/announcing-wsl-2/) and in VMs managed by [multipass](https://github.com/CanonicalLtd/multipass)
 
 ## Quick Start
 

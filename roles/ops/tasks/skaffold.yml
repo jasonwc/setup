@@ -1,0 +1,14 @@
+- name: download skaffold
+  get_url:
+    url: "https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64"
+    dest: /var/tmp/skaffold
+
+- name: make skaffold executable
+  file: dest=/var/tmp/skaffold mode=a+x
+
+- name: Create symlink for skaffold
+  become: true
+  file:
+    src: /var/tmp/skaffold
+    dest: /usr/local/bin/skaffold
+    state: link

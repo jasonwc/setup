@@ -4,3 +4,4 @@
 - include_tasks: terraform.yml
 - include_tasks: k14s.yml
 - include_tasks: kubectx.yml
+- include_tasks: skaffold.yml

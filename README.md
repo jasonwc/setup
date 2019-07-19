@@ -8,13 +8,18 @@ sudo sh bootstrap.sh
 ansible-playbook -K playbook.yaml
 ```
 
-## To Do:
+## What do you get?
 
-- [X] Docker
-- [X] Kubectl
-- [X] Terraform
-- [X] Helm
-- [X] k14s
+- Docker: building and running containers
+- Kubectl: interacting with Kubernetes clusters
+- Kubeadm: building and managing Kubernetes clusters
+- Terraform: building and managing infrastructure
+- Helm: building, deploying, and using Helm charts
+- k14s: using ytt (yaml templating), kbld (image building and pushing), kapp (kubernetes application), kwt (workstation tooling)
+- kubectx: quickly changing and seeing kubernetes context
+- kubens: quickly changing and seeing kubernetes namespaces
+
+## To Do:
 
 - [ ] ruby
 - [ ] node
@@ -22,8 +27,6 @@ ansible-playbook -K playbook.yaml
 - [ ] asdf
 - [ ] rvm
 - [ ] kubeps1
-- [ ] kubectx
-- [ ] kubens
 - [ ] terragrunt
 - [ ] vim
 - [ ] fonts
@@ -38,5 +41,5 @@ ansible-playbook -K playbook.yaml
 - [ ] spacemacs?
 
 ## Resources
-[Got me started](https://www.tricksofthetrades.net/2017/10/02/ansible-local-playbooks/)
-[dev-machine](https://github.com/SteveEdson/dev-machine)
+- [Got me started](https://www.tricksofthetrades.net/2017/10/02/ansible-local-playbooks/)
+- [dev-machine](https://github.com/SteveEdson/dev-machine)

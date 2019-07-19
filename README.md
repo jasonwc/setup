@@ -10,11 +10,12 @@ ansible-playbook -K playbook.yaml
 
 ## To Do:
 
-- [ ] Docker 
-- [ ] Kubectl
-- [ ] Helm
-- [ ] k14s
-- [ ] terraform
+- [X] Docker
+- [X] Kubectl
+- [X] Terraform
+- [X] Helm
+- [X] k14s
+
 - [ ] ruby
 - [ ] node
 - [ ] elixir

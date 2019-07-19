@@ -1,6 +1,8 @@
 - hosts: wsl
   vars_files:
-    - vars/workspace_repos.yml  
+    - vars/workspace_repos.yml
+    - vars/terraform.yml 
+    - vars/helm.yml 
   roles:
     - packages
     - shell

@@ -10,6 +10,7 @@
     state: latest
 
 - name: Install packages
+  become: true
   apt:
     name: "{{ packages }}"
   vars:
@@ -18,3 +19,4 @@
     - git
     - curl
     - tmux
+    - unzip

@@ -50,7 +50,7 @@
     state: present
     filename: kubernetes.list
 
-- name: Install kubeadm and kubectl
+- name: Install kubeadm and kubectl 
   become: true
   apt: 
     name: "{{ packages }}"
@@ -58,5 +58,50 @@
     update_cache: yes
   vars:
     packages:
+      - kubelet
       - kubeadm 
       - kubectl
+
+- name: download helm tarball
+  get_url:
+    url: "https://storage.googleapis.com/kubernetes-helm/helm-v{{ helm_version }}-linux-amd64.tar.gz"
+    dest: /var/tmp/helm-{{ helm_version }}.tar.gz
+    checksum: "sha256:{{ helm_shasum }}"
+
+- name: untar helm
+  unarchive:
+    src: "/var/tmp/helm-{{ helm_version }}.tar.gz"
+    dest: "/var/tmp/"
+
+- name: add helm binary to path
+  become: true
+  copy:
+    src: /var/tmp/linux-amd64/helm
+    dest: /usr/local/bin/helm
+    mode: 0755
+
+- name: download terraform package
+  get_url:
+    url: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
+    dest: /var/tmp/terraform-{{ terraform_version }}.zip
+    checksum: "sha256:{{ terraform_shasum }}"
+
+- name: unzip terraform package
+  unarchive:
+    src: "/var/tmp/terraform-{{ terraform_version }}.zip"
+    dest: "/var/tmp/"
+
+- name: add terraform binary to path
+  become: true
+  copy:
+    src: /var/tmp/terraform
+    dest: /usr/local/bin/terraform
+    mode: 0755
+
+- name: install kwt binary
+  become: true
+  get_url:
+    url: https://github.com/k14s/kwt/releases/download/v0.0.5/kwt-linux-amd64
+    mode: 0755
+    dest: /usr/local/bin/kwt
+    checksum: "sha256:706abe487e38c4f673180600d11098e408e6bc22fefb1cc512e3ac0f07a9072c"

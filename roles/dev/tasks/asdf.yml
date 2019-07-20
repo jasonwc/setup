@@ -14,12 +14,12 @@
   become: True
 
 - name: Get installed asdf plugins
-  command: "asdf plugin-list"
+  command: "bash -lc 'asdf plugin-list'"
   register: asdf_plugins
   ignore_errors: yes
 
 - name: Add asdf plugins
-  command: "asdf plugin-add {{ item }}"
+  command: "bash -lc 'asdf plugin-add {{ item }}'"
   when: "item|string not in asdf_plugins.stdout_lines"
   with_items:
     - erlang

@@ -4,12 +4,14 @@
   args:
     creates: ~/.asdf
 
-- name: Add asdf to shell
-  lineinfile:
-    insertafter: EOF
-    state: present
-    dest: "{{ lookup('env', 'HOME') }}/.bashrc"
-    line: "source {{ lookup('env', 'HOME') }}/.asdf/asdf.sh"
+- name: "source asdf script"
+  template:
+    src: "asdf.sh.j2"
+    dest: "/etc/profile.d/asdf.sh"
+    owner: "root"
+    group: "root"
+    mode: 0755
+  become: True
 
 - name: Get installed asdf plugins
   command: "asdf plugin-list"

@@ -32,3 +32,13 @@
     - libffi-dev
     - libtool
     - unixodbc-dev
+    - build-essential
+    - m4
+    - libncurses5-dev
+    - libwxgtk3.0-dev
+    - libgl1-mesa-dev
+    - libglu1-mesa-dev
+    - libpng-dev
+    - unixodbc-dev
+    - xsltproc
+    - fop

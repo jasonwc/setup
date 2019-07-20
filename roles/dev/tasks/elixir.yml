@@ -1,12 +1,12 @@
 ---
 - name: Install Erlang
-  shell: "asdf install erlang ref:master"
+  shell: "asdf install erlang 22.0"
 
 - name: Install Elixir
   shell: "asdf install elixir 1.8.0"
 
 - name: Set global Erlang
-  shell: "asdf global erlang ref:master"
+  shell: "asdf global erlang 22.0"
 
 - name: Set global Elixir
   shell: "asdf global elixir 1.8.0"

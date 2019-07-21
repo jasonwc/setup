@@ -4,20 +4,22 @@
   args:
     creates: ~/.asdf
 
-- name: Add asdf to shell
-  lineinfile:
-    insertafter: EOF
-    state: present
-    dest: "{{ lookup('env', 'HOME') }}/.bashrc"
-    line: "source {{ lookup('env', 'HOME') }}/.asdf/asdf.sh"
+- name: "source asdf script"
+  template:
+    src: "asdf.sh.j2"
+    dest: "/etc/profile.d/asdf.sh"
+    owner: "root"
+    group: "root"
+    mode: 0755
+  become: True
 
 - name: Get installed asdf plugins
-  command: "asdf plugin-list"
+  command: "bash -lc 'asdf plugin-list'"
   register: asdf_plugins
   ignore_errors: yes
 
 - name: Add asdf plugins
-  command: "asdf plugin-add {{ item }}"
+  command: "bash -lc 'asdf plugin-add {{ item }}'"
   when: "item|string not in asdf_plugins.stdout_lines"
   with_items:
     - erlang

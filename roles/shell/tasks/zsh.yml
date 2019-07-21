@@ -12,8 +12,13 @@
   become_user: root
   command: chsh -s /bin/zsh jason
 
+- name: Check for oh-my-zsh
+  stat: path=/$HOME/.oh-my-zsh
+  register: ohmyzsh
+
 - name: install oh-my-zsh
   shell: bash -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  when: not ohmyzsh.stat.exists
 
 - name: Install dircolors
   command: curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors

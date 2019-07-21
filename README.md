@@ -21,6 +21,15 @@ ansible-playbook -K playbook.yaml
 
 ## What do you get?
 
+### Shell
+
+> Installs basic tools like vim and tmux and sets up zsh as the default shell. Uses my [dotfiles](https://github.com/jasonwc/dotfiles) repo to configure them.
+
+- [zsh](http://zsh.sourceforge.net/): "Zsh is a shell designed for interactive use, although it is also a powerful scripting language."
+- [oh-my-zsh](https://ohmyz.sh/): "Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration."
+- [vim](https://www.vim.org/): "Vim is a highly configurable text editor for efficiently creating and changing any kind of text."
+- [tmux](https://github.com/tmux/tmux): "tmux is a terminal multiplexer: it enables a number of terminals to be created, accessed, and controlled from a single screen. "
+
 ### Ops tooling
 
 > Tooling for doing operations and infrastructure type tasks. Mostly focused on interacting with cloud providers and working with Kubernetes and Docker.
@@ -69,6 +78,8 @@ If you see something like this, you need to set correct permissions on the `setu
  chmod 700 /path/to/setup directory
 ```
 
-## Resources
+## Inspiration
 - [Quickstart on how to create local ansible playbooks](https://www.tricksofthetrades.net/2017/10/02/ansible-local-playbooks/)
-- [dev-machine](https://github.com/SteveEdson/dev-machine)
+- [SteveEdson/dev-machine](https://github.com/SteveEdson/dev-machine)
+= [ballPointPenguin/ansible-develop](https://github.com/ballPointPenguin/ansible-develop)
+- [Sudo Science - Using Ansible to Set Up Zsh](https://sudo-science.com/using-ansible-to-set-up-zsh/)

@@ -1,5 +1,8 @@
-# - name: Install dotfiles  
-#   git:     
-#     repo: 'ssh://git@github.com/jasonwc/dotfiles.git'     
-#     dest: '{{ lookup("env", "HOME") }}/dotfiles'
-#     key_file: /home/jason/.ssh/id_rsa
+- name: Clone dotfiles, unless present
+  shell: cd && (test -d `basename git@github.com:jasonwc/dotfiles.git .git` || git clone git@github.com:jasonwc/dotfiles.git)
+
+- name: Pull latest dotfiles
+  shell: cd {{ lookup("env", "HOME") }}/dotfiles && git pull
+
+- name: Install dotfiles
+  shell: cd {{ lookup("env", "HOME") }}/dotfiles && sh install.sh

@@ -1,0 +1,19 @@
+- name: install zsh and friends
+  become: True
+  become_user: root
+  package: name={{ item }}
+  with_items:
+    - git-core
+    - powerline
+    - zsh
+
+- name: change user shell to zsh
+  become: yes
+  become_user: root
+  command: chsh -s /bin/zsh jason
+
+- name: install oh-my-zsh
+  shell: bash -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+- name: Install dircolors
+  command: curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors

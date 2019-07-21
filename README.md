@@ -78,5 +78,5 @@ If you see something like this, you need to set correct permissions on the `setu
 ## Inspiration
 - [Quickstart on how to create local ansible playbooks](https://www.tricksofthetrades.net/2017/10/02/ansible-local-playbooks/)
 - [SteveEdson/dev-machine](https://github.com/SteveEdson/dev-machine)
-= [ballPointPenguin/ansible-develop](https://github.com/ballPointPenguin/ansible-develop)
+- [ballPointPenguin/ansible-develop](https://github.com/ballPointPenguin/ansible-develop)
 - [Sudo Science - Using Ansible to Set Up Zsh](https://sudo-science.com/using-ansible-to-set-up-zsh/)

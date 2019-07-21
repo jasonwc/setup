@@ -6,6 +6,7 @@ Used on:
 - [Multipass](https://github.com/CanonicalLtd/multipass) on Windows running latest Ubuntu.
 
 For information on how to enable WSL2, check out this handy [post](https://www.thomasmaurer.ch/2019/06/install-wsl-2-on-windows-10/?source=post_page---------------------------)
+
 ## Quick Start
 
 ```
@@ -55,15 +56,11 @@ ansible-playbook -K playbook.yaml
 ## To Do:
 
 - [ ] node
-- [ ] kubeps1
 - [ ] terragrunt
 - [ ] fonts
-- [ ] directory management
 - [ ] possibly add gui applications for a native linux install? e.g. cli mode vs full mode
-- [ ] vim wiki
 - [ ] vim plugins
 - [ ] doctl
-- [ ] spacemacs?
 
 ## Troubleshooting
 
@@ -74,6 +71,8 @@ If you see something like this, you need to set correct permissions on the `setu
 ```
  chmod 700 /path/to/setup directory
 ```
+
+This often happens with WSL installs.
 
 ## Inspiration
 - [Quickstart on how to create local ansible playbooks](https://www.tricksofthetrades.net/2017/10/02/ansible-local-playbooks/)

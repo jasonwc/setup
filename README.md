@@ -84,7 +84,7 @@ Generally, I'm running this on my primary WSL2 workspace. I also spin up a VM fr
 
 If you see something like this, you need to set correct permissions on the `setup` directory:
 
-```
+```bash
  chmod 700 /path/to/setup directory
 ```
 

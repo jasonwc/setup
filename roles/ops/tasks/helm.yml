@@ -1,3 +1,4 @@
+---
 - name: Add an apt signing key for Helm
   become: true
   apt_key:

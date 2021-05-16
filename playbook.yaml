@@ -4,7 +4,7 @@
     - vars/language_versions.yml
     - vars/prerequisite_packages.yml
     - vars/tool_versions.yml
-    - vars/workspace_repos.yml
+    - vars/user_environment.yml
   ### Comment out roles you don't need ###
   roles:
     - packages

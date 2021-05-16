@@ -1,6 +1,7 @@
+---
 - name: install workspace directory
-  file: path='{{ lookup("env", "HOME") }}/workspace' state=directory
+  file: path='{{ lookup("env", "HOME") }}/{{ repo_directory }}' state=directory
 
 - name: install workspace repos
-  action: shell cd {{ lookup("env", "HOME") }}/workspace && (test -d `basename {{ item }} .git` || git clone {{ item }})
-  with_items: "{{ workspace_repos }}"
+  action: shell cd {{ lookup("env", "HOME") }}/{{ repo_directory}} && (test -d `basename {{ item }} .git` || git clone {{ item }})
+  with_items: "{{ repos }}"

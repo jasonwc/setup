@@ -1,4 +1,6 @@
 ---
-workspace_repos:
+user: jasonwc
+repo_directory: workspace
+repos:
   - git@github.com:jasonwc/noobernetes.io.git
   - git@github.com:jasonwc/jasoncarter.io.git

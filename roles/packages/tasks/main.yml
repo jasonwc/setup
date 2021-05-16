@@ -1,3 +1,4 @@
+---
 - name: update package list
   become: true
   package:
@@ -13,4 +14,3 @@
   become: true
   apt:
     name: "{{ prerequisite_packages }}"
-

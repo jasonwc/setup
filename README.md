@@ -18,9 +18,12 @@ Follow the installation instructions on the [Multipass homepage](https://multipa
 
 You'll need to get an ssh key into your new Linux environment. Afterwards, run the following:
 
-```
+```bash
 # Clone to your home directory
 git clone git@github.com:jasonwc/setup.git
+
+# Set your username in playbook.yaml. While you're at it,
+# check out the roles and vars_files too.
 
 # Installs ansible and dependencies
 sudo sh bootstrap.sh
@@ -30,6 +33,9 @@ ansible-playbook -K playbook.yaml
 ```
 
 ## What do you get?
+This is a _somewhat_ opinionated but *lean* installation of tools that I want to have on a Linux environment. I do a lot of dev _in_ Docker containers, so often those containers will have specialized tools.
+
+Generally, I'm running this on my primary WSL2 workspace. I also spin up a VM from time to time for specific tasks and provision it with these tools for consistency.
 
 ### Shell
 
@@ -39,6 +45,8 @@ ansible-playbook -K playbook.yaml
 - [oh-my-zsh](https://ohmyz.sh/): "Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration."
 - [vim](https://www.vim.org/): "Vim is a highly configurable text editor for efficiently creating and changing any kind of text."
 - [tmux](https://github.com/tmux/tmux): "tmux is a terminal multiplexer: it enables a number of terminals to be created, accessed, and controlled from a single screen. "
+- Syncs from my [dotfiles repo](https://github.com/jasonwc/dotfiles). Loads of config for the basics over there.
+- Clones some repos I'm working on
 
 ### Ops tooling
 
@@ -47,11 +55,9 @@ ansible-playbook -K playbook.yaml
 - [Docker](https://www.docker.com/): building and running containers
 - [Kubectl](https://kubernetes.io/): interacting with Kubernetes clusters
 - [Kubeadm](https://github.com/kubernetes/kubeadm): building and managing Kubernetes clusters
-- [Terraform](https://www.terraform.io/): building and managing infrastructure
 - [Helm](https://helm.sh): building, deploying, and using Helm charts
-- [k14s](https://k14s.io/): using ytt (yaml templating), kbld (image building and pushing), kapp (kubernetes application), kwt (workstation tooling)
-- [kubectx and kubens](https://kubectx.dev): tools for quickly changing kubernetes contexts and namespaces
-- [Skaffold](https://github.com/GoogleContainerTools/skaffold): CLI tool for iterating on Kubernetes applications
+- [Krew](https://krew.sigs.k8s.io/): Plugin manager for `kubectl`
+- Configures `kubectl` with some `krew` plugins I like.
 
 ### Dev tooling
 
@@ -61,6 +67,8 @@ ansible-playbook -K playbook.yaml
 - [ruby](https://www.ruby-lang.org/en/): "A dynamic, open source programming language with a focus on simplicity and productivity."
 - [erlang](https://www.erlang.org/): "Erlang is a programming language used to build massively scalable soft real-time systems with requirements on high availability."
 - [elixir](https://elixir-lang.org/): "Elixir is a dynamic, functional language designed for building scalable and maintainable applications."
+- Handles dependency installation for various languages
+- Configurable language versions. Installs whatever is set and sets it globally for easy upgrades.
 
 ## Troubleshooting
 
@@ -75,6 +83,10 @@ If you see something like this, you need to set correct permissions on the `setu
 This often happens with WSL installs.
 
 ## Inspiration
+I learned a lot about Ansible during my time at [Mavenlink](https://github.com/mavenlink). Much of the intial idea came from a great tool maintained by the team there called "ansible-workstation" and its successor "bootstrap-workstation".
+
+These other resources helped me along the way:
+
 - [Quickstart on how to create local ansible playbooks](https://www.tricksofthetrades.net/2017/10/02/ansible-local-playbooks/)
 - [SteveEdson/dev-machine](https://github.com/SteveEdson/dev-machine)
 - [ballPointPenguin/ansible-develop](https://github.com/ballPointPenguin/ansible-develop)

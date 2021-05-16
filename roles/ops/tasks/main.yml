@@ -1,7 +1,3 @@
 - include_tasks: docker.yml
 - include_tasks: kubernetes.yml
 - include_tasks: helm.yml
-- include_tasks: terraform.yml
-- include_tasks: k14s.yml
-- include_tasks: kubectx.yml
-- include_tasks: skaffold.yml

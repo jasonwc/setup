@@ -1,6 +1,6 @@
 ---
 - name: Clone asdf
-  command: git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.2
+  command: git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v{{ asdf_version }}
   args:
     creates: ~/.asdf
 
@@ -13,13 +13,14 @@
     mode: 0755
   become: True
 
+# TODO: This failed when no plugins existed :/
 - name: Get installed asdf plugins
-  command: "bash -lc 'asdf plugin-list'"
+  command: "asdf plugin-list"
   register: asdf_plugins
   ignore_errors: yes
 
 - name: Add asdf plugins
-  command: "bash -lc 'asdf plugin-add {{ item }}'"
+  command: "asdf plugin-add {{ item }}"
   when: "item|string not in asdf_plugins.stdout_lines"
   with_items:
     - erlang

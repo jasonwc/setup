@@ -1,0 +1,36 @@
+---
+prerequisite_packages:
+  # base packages
+  - vim
+  - git
+  - curl
+  - tmux
+  - unzip
+  - fzf
+  # ruby deps
+  - build-essential
+  - libssl-dev
+  - libreadline-dev
+  - zlib1g-dev
+  - automake
+  # elixir deps
+
+  # erlang deps
+  # 
+  # - autoconf
+  # - libncurses-dev
+  # - libyaml-dev
+  # - libxslt-dev
+  # - libffi-dev
+  # - libtool
+  # - unixodbc-dev
+
+  # - m4
+  # - libncurses5-dev
+  # - libwxgtk3.0-dev
+  # - libgl1-mesa-dev
+  # - libglu1-mesa-dev
+  # - libpng-dev
+  # - unixodbc-dev
+  # - xsltproc
+  # - fop

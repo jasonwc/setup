@@ -2,12 +2,21 @@
 Ansible Playbooks for setting up an ops/ruby/elixir/node focused workstation.
 
 Used on:
-- [WSL2](https://devblogs.microsoft.com/commandline/announcing-wsl-2/) with the [Ubuntu app](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab).
+- [WSL2](https://devblogs.microsoft.com/commandline/announcing-wsl-2/) with the [Ubuntu app](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6).
 - [Multipass](https://github.com/CanonicalLtd/multipass) on Windows running latest Ubuntu.
 
-For information on how to enable WSL2, check out this handy [post](https://www.thomasmaurer.ch/2019/06/install-wsl-2-on-windows-10/?source=post_page---------------------------)
+## Windows setup
+There are a couple easy ways to get to a clean Linux environment on Windows: multipass and WSL.
+
+### WSL2
+Follow the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
+### Multipass
+Follow the installation instructions on the [Multipass homepage](https://multipass.run)
 
 ## Quick Start
+
+You'll need to get an ssh key into your new Linux environment. Afterwards, run the following:
 
 ```
 # Clone to your home directory
@@ -53,15 +62,6 @@ ansible-playbook -K playbook.yaml
 - [erlang](https://www.erlang.org/): "Erlang is a programming language used to build massively scalable soft real-time systems with requirements on high availability."
 - [elixir](https://elixir-lang.org/): "Elixir is a dynamic, functional language designed for building scalable and maintainable applications."
 
-## To Do:
-
-- [ ] node
-- [ ] terragrunt
-- [ ] fonts
-- [ ] possibly add gui applications for a native linux install? e.g. cli mode vs full mode
-- [ ] vim plugins
-- [ ] doctl
-
 ## Troubleshooting
 
 >  [WARNING] Ansible is in a world writable directory
@@ -80,3 +80,4 @@ This often happens with WSL installs.
 - [ballPointPenguin/ansible-develop](https://github.com/ballPointPenguin/ansible-develop)
 - [Wintus/Ansible-WSL](https://github.com/Wintus/Ansible-WSL)
 - [Sudo Science - Using Ansible to Set Up Zsh](https://sudo-science.com/using-ansible-to-set-up-zsh/)
+- [A Linux Dev Environment on Windows with WSL 2, Docker Desktop and More](https://www.youtube.com/watch?v=idW-an99TAM&)

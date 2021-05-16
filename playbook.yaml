@@ -1,12 +1,16 @@
 - hosts: wsl
+  ### Go here to edit variables ###
   vars_files:
+    - vars/language_versions.yml
+    - vars/prerequisite_packages.yml
+    - vars/tool_versions.yml
     - vars/workspace_repos.yml
-    - vars/terraform.yml 
-    - vars/helm.yml 
+  ### Comment out roles you don't need ###
   roles:
     - packages
     - shell
     - workspace
     - ops
     - dev
-  user: jason
+  ### Change to your user! ###
+  user: jasonwc

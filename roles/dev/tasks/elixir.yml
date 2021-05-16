@@ -1,12 +1,12 @@
 ---
 - name: Install Erlang
-  shell: "bash -lc 'asdf install erlang 22.0'"
+  shell: "asdf install erlang {{ erlang_version }}"
 
 - name: Install Elixir
-  shell: "bash -lc 'asdf install elixir 1.8.0'"
+  shell: "asdf install elixir {{ elixir_version}}"
 
 - name: Set global Erlang
-  shell: "bash -lc 'asdf global erlang 22.0'"
+  shell: "asdf global erlang {{ erlang_version }}"
 
 - name: Set global Elixir
-  shell: "bash -lc 'asdf global elixir 1.8.0'"
+  shell: "asdf global elixir {{ elixir_version }}"

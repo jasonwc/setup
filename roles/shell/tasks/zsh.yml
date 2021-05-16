@@ -1,3 +1,4 @@
+---
 - name: install zsh and friends
   become: True
   become_user: root
@@ -10,7 +11,7 @@
 - name: change user shell to zsh
   become: yes
   become_user: root
-  command: chsh -s /bin/zsh jason
+  command: chsh -s /bin/zsh {{ user }} 
 
 - name: Check for oh-my-zsh
   stat: path=/$HOME/.oh-my-zsh
@@ -20,5 +21,10 @@
   shell: bash -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   when: not ohmyzsh.stat.exists
 
+- name: Check for dircolors
+  stat: path=/$HOME/.dircolors
+  register: dircolors
+
 - name: Install dircolors
-  command: curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
+  command: curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output /$HOME/.dircolors
+  when: not dircolors.stat.exists

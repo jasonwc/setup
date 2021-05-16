@@ -1,3 +1,5 @@
+---
+# TODO: Refactor all of this lol
 - name: Clone dotfiles, unless present
   shell: cd && (test -d `basename git@github.com:jasonwc/dotfiles.git .git` || git clone git@github.com:jasonwc/dotfiles.git)
 

@@ -1,17 +1,23 @@
-- name: download helm tarball
-  get_url:
-    url: "https://storage.googleapis.com/kubernetes-helm/helm-v{{ helm_version }}-linux-amd64.tar.gz"
-    dest: /var/tmp/helm-{{ helm_version }}.tar.gz
-    checksum: "sha256:{{ helm_shasum }}"
-
-- name: untar helm
-  unarchive:
-    src: "/var/tmp/helm-{{ helm_version }}.tar.gz"
-    dest: "/var/tmp/"
-
-- name: add helm binary to path
+---
+- name: Add an apt signing key for Helm
   become: true
-  copy:
-    src: /var/tmp/linux-amd64/helm
-    dest: /usr/local/bin/helm
-    mode: 0755
+  apt_key:
+    url: https://baltocdn.com/helm/signing.asc
+    state: present
+
+- name: Add apt repository for Helm 
+  become: true
+  apt_repository:
+    repo: deb https://baltocdn.com/helm/stable/debian/ all main
+    state: present
+    filename: helm-stable-debian.list
+
+- name: Install helm
+  become: true
+  apt: 
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - helm

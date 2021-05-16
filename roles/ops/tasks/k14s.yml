@@ -1,3 +1,0 @@
-- name: install k14s tools (kwt, kapp, kbld, ytt)
-  become: true
-  shell: 'wget -O- https://k14s.io/install.sh | bash'

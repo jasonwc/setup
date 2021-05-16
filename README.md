@@ -5,7 +5,7 @@ Used on:
 - [WSL2](https://devblogs.microsoft.com/commandline/announcing-wsl-2/) with the [Ubuntu app](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6).
 - [Multipass](https://github.com/CanonicalLtd/multipass) on Windows running latest Ubuntu.
 
-## Windows setup
+## (Required) Windows setup
 There are a couple easy ways to get to a clean Linux environment on Windows: multipass and WSL.
 
 ### WSL2
@@ -14,8 +14,14 @@ Follow the [Windows Subsystem for Linux Installation Guide for Windows 10](https
 ### Multipass
 Follow the installation instructions on the [Multipass homepage](https://multipass.run)
 
-## Quick Start
+## (Required) Docker for Desktop
+This workstation won't install the Docker daemon in either the WSL or Multipass. Instead it assumes you have Docker for Desktop running on the Windows side and only installs client libs.
 
+To install Docker for Desktop on Windows, check out [their instructions](https://docs.docker.com/docker-for-windows/install/). For simplicity, I'm running Docker for Desktop with the WSL2.0 backend.
+
+If you're using Multipass, you might have to enable some settings to talk to the Docker socket running in either WSL or on Hyper V. For WSL, it works pretty seamlessly.
+
+## Quick Start
 You'll need to get an ssh key into your new Linux environment. Afterwards, run the following:
 
 ```bash

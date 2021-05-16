@@ -23,8 +23,8 @@
 
 - name: Check for dircolors
   stat: path=/$HOME/.dircolors
-  register: ohmyzsh
+  register: dircolors
 
 - name: Install dircolors
   command: curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output /$HOME/.dircolors
-  when: not ohmyzsh.stat.exists
+  when: not dircolors.stat.exists

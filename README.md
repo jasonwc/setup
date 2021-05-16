@@ -1,5 +1,5 @@
 # Setup
-Ansible Playbooks for setting up an ops/ruby/elixir/node focused workstation.
+Ansible Playbooks for setting up an ops/ruby/elixir focused workstation.
 
 Used on:
 - [WSL2](https://devblogs.microsoft.com/commandline/announcing-wsl-2/) with the [Ubuntu app](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6).
@@ -22,8 +22,8 @@ You'll need to get an ssh key into your new Linux environment. Afterwards, run t
 # Clone to your home directory
 git clone git@github.com:jasonwc/setup.git
 
-# Set your username in playbook.yaml. While you're at it,
-# check out the roles and vars_files too.
+# Set your username in playbook.yaml. While you're at it, check out the roles and vars_files too.
+# Set your username, repo directory, and repos in user_environment.yml (or clone mine, what do I care!)
 
 # Installs ansible and dependencies
 sudo sh bootstrap.sh

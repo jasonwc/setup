@@ -1,4 +1,16 @@
 ---
+- name: Install Ruby dependencies
+  become: true
+  apt:
+    name: "{{ ruby_dependencies }}"
+  vars:
+    ruby_dependencies:
+    - build-essential
+    - libssl-dev
+    - libreadline-dev
+    - zlib1g-dev
+    - automake
+
 - name: Install Ruby
   shell: "asdf install ruby {{ ruby_version }}"
 

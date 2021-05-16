@@ -5,21 +5,23 @@ Used on:
 - [WSL2](https://devblogs.microsoft.com/commandline/announcing-wsl-2/) with the [Ubuntu app](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6).
 - [Multipass](https://github.com/CanonicalLtd/multipass) on Windows running latest Ubuntu.
 
-## (Required) Windows setup
+## (Required) Setting up a Linux Environment
 There are a couple easy ways to get to a clean Linux environment on Windows: multipass and WSL.
 
-### WSL2
+### (Recommended) WSL2
 Follow the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 ### Multipass
 Follow the installation instructions on the [Multipass homepage](https://multipass.run)
 
 ## (Required) Docker for Desktop
-This workstation won't install the Docker daemon in either the WSL or Multipass. Instead it assumes you have Docker for Desktop running on the Windows side and only installs client libs.
+This setup repo won't install the Docker daemon in the Linux environment itself. Instead it assumes you have Docker for Desktop running either in WSL2.0 or on the Windows side and only installs client libs. I've gone with this approach because the Docker and WSL teams are constantly improving the connectivity and it was much harder to try to spin up Docker myself in WSL2.0 and nigh impossible in WSL1.0.
 
-To install Docker for Desktop on Windows, check out [their instructions](https://docs.docker.com/docker-for-windows/install/). For simplicity, I'm running Docker for Desktop with the WSL2.0 backend.
+To install Docker for Desktop on Windows, check out [their instructions](https://docs.docker.com/docker-for-windows/install/).
 
-If you're using Multipass, you might have to enable some settings to talk to the Docker socket running in either WSL or on Hyper V. For WSL, it works pretty seamlessly.
+If you're using WSL2.0, make sure to use the WSL backend setting in the Docker for Desktop client. Then it's pretty seamless.
+
+If you're using Multipass, you might have to enable some settings to talk to the Docker socket running in either WSL2.0 or on Hyper V.
 
 ## Quick Start
 You'll need to get an ssh key into your new Linux environment. Afterwards, run the following:
@@ -28,8 +30,8 @@ You'll need to get an ssh key into your new Linux environment. Afterwards, run t
 # Clone to your home directory
 git clone git@github.com:jasonwc/setup.git
 
-# Set your username in playbook.yaml. While you're at it, check out the roles and vars_files too.
-# Set your username, repo directory, and repos in user_environment.yml (or clone mine, what do I care!)
+# (Required) Set your username in playbook.yaml. While you're at it, check out the roles and vars_files too.
+# (Required) Set your username, repo directory, and repos in user_environment.yml (or clone my repos, what do I care!)
 
 # Installs ansible and dependencies
 sudo sh bootstrap.sh

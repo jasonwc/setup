@@ -24,7 +24,11 @@
       - kubelet
       - kubeadm 
       - kubectl
-# TODO: Check to see if Krew is installed lol
+
+- name: Check for krew
+  stat: path=/$HOME/.krew
+  register: krew
+
 - name: Install krew
   shell: |
     set -x; cd "$(mktemp -d)" &&
@@ -34,9 +38,15 @@
     tar zxvf krew.tar.gz &&
     KREW=./krew-"${OS}_${ARCH}" &&
     "$KREW" install krew
-# TODO: Exclude already installed items
+  when: not krew.stat.exists
+
+- name: Get installed krew plugins
+  command: "kubectl krew list"
+  register: "krew_plugins"
+
 - name: Install krew plugins
   command: "kubectl krew install {{ item }}"
+  when: "item|string not in krew_plugins.stdout_lines"
   with_items:
     - cert-manager
     - ctx

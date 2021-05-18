@@ -28,3 +28,12 @@
 - name: Install dircolors
   command: curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output /$HOME/.dircolors
   when: not dircolors.stat.exists
+
+- name: Check for powerlevel10k
+  stat: path=/$HOME/.oh-my-zsh/custom/themes/powerlevel10k
+  register: powerlevel10k
+
+- name: Clone powerlevel10k
+  command: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git {{ lookup("env", "HOME") }}/.oh-my-zsh/custom/themes/powerlevel10k
+  when: not powerlevel10k.stat.exists
+

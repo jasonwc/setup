@@ -8,3 +8,6 @@
 
 - name: Install dotfiles
   shell: cd {{ lookup("env", "HOME") }}/dotfiles && sh install.sh
+
+- name: Run PlugInstall in Vim
+  shell: vim +'PlugInstall --sync' +qa

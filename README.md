@@ -55,6 +55,7 @@ Generally, I'm running this on my primary WSL2 workspace. I also spin up a VM fr
 - [tmux](https://github.com/tmux/tmux): "tmux is a terminal multiplexer: it enables a number of terminals to be created, accessed, and controlled from a single screen. "
 - Syncs from my [dotfiles repo](https://github.com/jasonwc/dotfiles). Loads of config for the basics over there.
 - Clones some repos I'm working on
+- Runs `PlugInstall` in Vim
 
 ### Ops tooling
 
@@ -101,3 +102,4 @@ These other resources helped me along the way:
 - [Wintus/Ansible-WSL](https://github.com/Wintus/Ansible-WSL)
 - [Sudo Science - Using Ansible to Set Up Zsh](https://sudo-science.com/using-ansible-to-set-up-zsh/)
 - [A Linux Dev Environment on Windows with WSL 2, Docker Desktop and More](https://www.youtube.com/watch?v=idW-an99TAM&)
+- [Running Vim commands non-interactively](https://github.com/junegunn/vim-plug/issues/675)

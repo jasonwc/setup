@@ -4,3 +4,8 @@ repo_directory: workspace
 repos:
   - git@github.com:jasonwc/noobernetes.io.git
   - git@github.com:jasonwc/jasoncarter.io.git
+  - git@github.com:jasonwc/carter.haus.git
+dotfiles_repo: jasonwc/dotfiles
+dotfiles_branch: master
+dotfiles_command: sh install.sh
+

@@ -1,0 +1,16 @@
+---
+- name: Download latest pulumi release
+  get_url:
+    url: https://get.pulumi.com/releases/sdk/pulumi-v{{ pulumi_version }}-linux-x64.tar.gz
+    dest: /var/tmp/pulumi-{{ pulumi_version }}.tar.gz
+- name: Untar pulumi release
+  unarchive:
+    src: /var/tmp/pulumi-{{ pulumi_version }}.tar.gz
+    dest: /var/tmp
+- name: Add pulumi binary to path
+  become: true
+  copy:
+    src: /var/tmp/pulumi/
+    dest: /usr/local/bin/
+    mode: 0755
+

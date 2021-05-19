@@ -1,0 +1,16 @@
+---
+- name: Download latest doctl release
+  get_url:
+    url: https://github.com/digitalocean/doctl/releases/download/v{{ doctl_version }}/doctl-{{ doctl_version }}-linux-amd64.tar.gz
+    dest: /var/tmp/doctl-{{ doctl_version }}.tar.gz
+- name: Untar doctl release
+  unarchive:
+    src: /var/tmp/doctl-{{ doctl_version }}.tar.gz
+    dest: /var/tmp
+- name: Add doctl binary to path
+  become: true
+  copy:
+    src: /var/tmp/doctl
+    dest: /usr/local/bin/doctl
+    mode: 0755
+

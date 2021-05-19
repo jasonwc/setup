@@ -1,3 +1,5 @@
 ---
 helm_version: "3.5.4"
 asdf_version: "0.8.0"
+doctl_version: "1.61.0"
+pulumi_version: "3.2.1"

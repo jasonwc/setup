@@ -3,3 +3,4 @@
 # Languages
 - include_tasks: ruby.yml
 - include_tasks: elixir.yml
+- include_tasks: nodejs.yml

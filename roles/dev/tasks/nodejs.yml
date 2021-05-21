@@ -1,0 +1,15 @@
+---
+- name: Install node dependencies
+  become: true
+  apt:
+    name: "{{ node_dependencies }}"
+  vars:
+    node_dependencies:
+    - dirmngr
+    - gpg
+
+- name: Install nodejs
+  shell: "asdf install nodejs {{ nodejs_version }}"
+
+- name: Set global nodejs
+  shell: "asdf global nodejs {{ nodejs_version }}"

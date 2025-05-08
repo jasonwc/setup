@@ -1,6 +1,8 @@
 # Setup
 Ansible Playbooks for setting up an ops/ruby/elixir focused workstation.
 
+## ⚠️ Deprecated in favor of Nix-based [workstation](https://github.com/jasonwc/workstation) ⚠️
+
 Used on:
 - [WSL2](https://devblogs.microsoft.com/commandline/announcing-wsl-2/) with the [Ubuntu app](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6).
 - [Multipass](https://github.com/CanonicalLtd/multipass) on Windows running latest Ubuntu.
